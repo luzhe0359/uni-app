@@ -2,8 +2,12 @@
 // #ifndef VUE3
 import Vue from 'vue'
 import App from './App'
+import HTTP from './utils/request.js'
+import showMsg from './utils/msg.js'
 
 Vue.config.productionTip = false
+uni.$http = HTTP
+uni.$msg = showMsg
 
 App.mpType = 'app'
 
