@@ -1,5 +1,6 @@
 <template>
 	<view>
+		<search-bar @click="goToSearch"></search-bar>
 		<view class="scroll-container">
 			<!-- 左侧的滚动视图区域 -->
 			<scroll-view class="left-scroll" scroll-y :style="{height: wh + 'px'}">
@@ -43,8 +44,8 @@
 		onLoad() {
 			// 获取当前系统的信息
 			const sysInfo = uni.getSystemInfoSync()
-			// 为 wh 窗口可用高度动态赋值
-			this.wh = sysInfo.windowHeight
+			// 为 wh 窗口可用高度动态赋值 (减去search-bar高度)
+			this.wh = sysInfo.windowHeight - 50
 
 			this.getCateList()
 		},
@@ -68,6 +69,12 @@
 			  uni.navigateTo({
 			    url: '/pages/sub/goods_list/goods_list?cid=' + item3.cat_id
 			  })
+			},
+			// 跳转到搜索页面
+			goToSearch() {
+				uni.navigateTo({
+				  url: '/pages/sub/search/search'
+				})
 			}
 		}
 	}

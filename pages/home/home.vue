@@ -1,5 +1,9 @@
 <template>
 	<view>
+		<view class="home-search">
+			
+		<search-bar @click="goToSearch"></search-bar>
+		</view>
 		<!-- 轮播图区域 -->
 		<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" :circular="true">
 			<swiper-item v-for="(item, i) in swiperList" :key="i">
@@ -79,12 +83,25 @@
 						url:"/pages/cate/cate"
 					})
 				}
+			},
+			// 跳转到搜索页面
+			goToSearch() {
+				uni.navigateTo({
+				  url: '/pages/sub/search/search'
+				})
 			}
 		},
 	}
 </script>
 
 <style lang="scss">
+	
+	.home-search {
+		position: sticky;
+		top: 0;
+		z-index: 999;
+	}
+	
 	swiper {
 		height: 330rpx;
 
@@ -121,4 +138,5 @@
 		flex-wrap: wrap;
 		justify-content: space-around;
 	}
+
 </style>
