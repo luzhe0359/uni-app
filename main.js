@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import HTTP from './utils/request.js'
 import showMsg from './utils/msg.js'
+import store from './store/index.js'
 
 Vue.config.productionTip = false
 uni.$http = HTTP
@@ -12,7 +13,8 @@ uni.$msg = showMsg
 App.mpType = 'app'
 
 const app = new Vue({
-    ...App
+    ...App,
+	store
 })
 app.$mount()
 // #endif
