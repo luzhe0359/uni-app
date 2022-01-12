@@ -128,11 +128,11 @@
 
 			.cate-lv3-list {
 				display: flex;
-			 flex-wrap: wrap;
+				flex-wrap: wrap;
 
 				.cate-lv3-item {
 					width: 33.33%;
-			  margin-bottom: 10px;
+					margin-bottom: 10px;
 					display: flex;
 					flex-direction: column;
 					align-items: center;

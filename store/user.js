@@ -26,12 +26,13 @@ export default {
 
 	// 数据包装器
 	getters: {
-	  // 收货详细地址的计算属性
-	  addstr(state) {
-	    if (!state.address.provinceName) return ''
-	
-	    // 拼接 省，市，区，详细地址 的字符串并返回给用户
-	    return state.address.provinceName + state.address.cityName + state.address.countyName + state.address.detailInfo
-	  }
+		// 收货详细地址的计算属性
+		addstr(state) {
+			if (!state.address.provinceName) return ''
+
+			// 拼接 省，市，区，详细地址 的字符串并返回给用户
+			return state.address.provinceName + state.address.cityName + state.address.countyName + state.address
+				.detailInfo
+		}
 	}
 }

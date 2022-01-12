@@ -55,9 +55,9 @@
 			},
 			// 点击跳转到商品详情页面
 			goToDetail(item) {
-			  uni.navigateTo({ 
-			    url: `/pages/sub/goods_detail/goods_detail?goods_id=${item.goods_id}`
-			  })
+				uni.navigateTo({
+					url: `/pages/sub/goods_detail/goods_detail?goods_id=${item.goods_id}`
+				})
 			}
 		},
 		// 上拉加载
